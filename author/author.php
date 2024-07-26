@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="index.php" class="title">HOLLSPAE</a>
+        <a href="../index/index.php" class="title">HOLLSPAE</a>
     </div>
     
     <div class="header">
