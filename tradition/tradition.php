@@ -1,15 +1,6 @@
 <?php
 include "../connect.php";
 
-
-// echo "<pre>";
-// var_dump($OutPut);
-
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
