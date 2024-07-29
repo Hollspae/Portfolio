@@ -64,23 +64,25 @@ a{
     margin-top: calc(var(--index) * 1);
 }
 
-.img-content{
+.container {
     display: flex;
-
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: calc(var(--index) * 1);
-    justify-content: space-around;
-
     width: 100%;
-    height: auto;
+    height: 100%;
+}
 
+.container-block {
+    display: flex;
+    width: auto;
+    height: calc(var(--index) * 19);
+
+    margin: calc(var(--index) * 1);
 
 }
-.img-content>img{
-    height: calc(var(--index) * 20); 
-    width: auto; 
 
-    border-radius: calc(var(--index) * 1); 
-
-    margin: calc(var(--index) * 1); 
+.container-block>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }

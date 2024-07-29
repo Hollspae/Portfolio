@@ -24,12 +24,14 @@ a{
 
 
 .container{
-    display: flex;
-    flex-direction: column;
+    display: inline-flex;
+    justify-content: center;
+    
     align-items: center;
-    width: 25%;
+    width: 100%;
     margin:  calc(var(--index) * 1) auto ;
 }
+
 .title{
     font-family: Bradley;
     font-weight: 500;

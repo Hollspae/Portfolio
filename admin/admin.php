@@ -1,9 +1,8 @@
 <?php
+session_start();
 include "../connect.php";
-
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +19,7 @@ include "../connect.php";
 
     <div class="container">
         <div class="container-data">
-            <form action="" method="post">
+            <form action="Form-admin.php" method="post">
                 <h1>Admin Panel</h1>
                 <input type="text" name="login" id="login" placeholder="Login">
                     <?php if (!empty ($Error['login'])){
