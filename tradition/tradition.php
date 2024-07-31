@@ -22,13 +22,13 @@ include "../connect.php";
         <li>
             <a href="../index/index.php">HOME</a>
             <?php
-            if ($_SESSION['admin'] == true) {
+            if (!empty($_SESSION['admin']) && $_SESSION['admin'] == true) {
                 echo '<a href="../EditAdmin/Didgital.php">DIGITAL</a>';
             } else {
                 echo '<a href="../digital/digital.php">DIGITAL</a>';
             } ?>
             <?php
-            if ($_SESSION['admin'] == true) {
+            if (!empty($_SESSION['admin']) && $_SESSION['admin'] == true) {
                 echo '<a href="../EditAdmin/Tradition.php">TRADITION</a>';
             } else {
                 echo '<a href="../tradition/tradition.php">TRADITION</a>';

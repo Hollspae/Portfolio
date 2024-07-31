@@ -2,8 +2,9 @@
 session_start();
 include "../connect.php";
 
-if (!isset($_SESSION["user"])) {
-    header("Location");
+if (empty($_SESSION["admin"])) {
+    $_SESSION["admin"] = "";
+    header('Location: ../index/index.php');
 }
 $sql = "SELECT Работа.id_работы, Год.Год, Работа.Фото FROM Работа 
                 LEFT JOIN Категория ON Работа.id_категории = Категория.id_категории 
@@ -35,13 +36,13 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <li>
             <a href="../index/index.php">HOME</a>
             <?php
-            if ($_SESSION['admin'] == true) {
+            if (!empty($_SESSION['admin']) && $_SESSION['admin'] == true) {
                 echo '<a href="../EditAdmin/Didgital.php">DIGITAL</a>';
             } else {
                 echo '<a href="../digital/digital.php">DIGITAL</a>';
             } ?>
             <?php
-            if ($_SESSION['admin'] == true) {
+            if (!empty($_SESSION['admin']) && $_SESSION['admin'] == true) {
                 echo '<a href="../EditAdmin/Tradition.php">TRADITION</a>';
             } else {
                 echo '<a href="../tradition/tradition.php">TRADITION</a>';
