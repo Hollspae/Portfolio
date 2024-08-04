@@ -81,7 +81,7 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 
     <aside class="addition">
-        <form action="FormCard.php">
+        <form action="FormCard.php" method="post">
             <div class="addition-block">
 
                 <div class="addition-block__close">
@@ -102,7 +102,7 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     <input type="text" name="Photo__year" id="Photo__year" placeholder="year">
                 </div>
 
-                <button class="btn-add">Add</button>
+                <button type="submit" class="btn-add" id="btn-add" name="SubmitAdd">Add</button>
 
             </div>
         </form>
