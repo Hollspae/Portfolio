@@ -56,12 +56,12 @@ include "../connect.php";
         $query = $BD->query($sql)->fetchALL(PDO::FETCH_ASSOC);
 
         foreach ($query as $date) {
-        
+
             if ($date['Год'] == $year['Год']) {
                 echo '
                 <li>
                     <div class="container-block">
-                     <img src="' . $date['Фото'] . '" alt="">
+                     <img src="' . $date['Фото'] . '" alt="" id="Image" name="Image">
                      </div></li>';
 
             }
@@ -72,40 +72,7 @@ include "../connect.php";
 
 
 
-    <?php
-    // $sql = "SELECT DISTINCT Год.Год FROM Год
-    //         INNER Join Работа ON Работа.id_года  = Год.id_года
-    //         INNER JOIN Категория ON Работа.id_категории = Категория.id_категории WHERE Категория.Наименование = 'Традишион' ORDER BY Год.Год DESC";
-    
-    // $query = $BD->query($sql);
-    // $array = $query->fetchALL(PDO::FETCH_ASSOC);
-    
-    // foreach ($array as $year) {
-    //     echo '<div class="content-year"> <h1 class="text-year">' . $year['Год'] . '</h1></div>
-    //         <div class="container">';
-    //     $sql = "SELECT Работа.id_работы, Год.Год, Работа.Фото FROM Работа 
-    //             LEFT JOIN Категория ON Работа.id_категории = Категория.id_категории 
-    //             INNER JOIN Год ON Работа.id_года = Год.id_года WHERE Категория.Наименование = 'Традишион' ORDER BY Работа.id_года ASC";
-    //     $query = $BD->query($sql)->fetchALL(PDO::FETCH_ASSOC);
-    
-    //     foreach ($query as $date) {
-    //         echo '<li>
-    //             <div class="container-block">';
-    
-    //         if ($date['Год'] == $year['Год']) {
-    //             echo '
-    //                  <img src="' . $date['Фото'] . '" alt="">';
-    //         }
-    //     }
-    //     echo '</div></div></div></li>';
-    // } ?>
-
-
-
-
-
-
-
+    <script src="js/script.js"></script>
 
 </body>
 

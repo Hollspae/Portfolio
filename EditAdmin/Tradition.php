@@ -56,7 +56,7 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <li>
                 <div class="container-block">
 
-                    <img src="<?php echo $row['Фото'] ?>" alt="">
+                    <img src="<?php echo $row['Фото'] ?>" alt="" >
 
                     <div class="container-block__title">
                         <span><?php echo $row['Год'] ?></span>
