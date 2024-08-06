@@ -21,11 +21,11 @@ include "../connect.php";
         <div class="container-data">
             <form action="Form-admin.php" method="post">
                 <h1>Admin Panel</h1>
-                <input type="text" name="login" id="login" placeholder="Login">
+                <input type="text" name="login" id="login" placeholder="Login" required>
                     <?php if (!empty ($Error['login'])){
                         echo $Error['login'];
                     }; ?>
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password" required>
                 <?php if (!empty ($Error['password'])){
                         echo $Error['password'];
                     }; ?>

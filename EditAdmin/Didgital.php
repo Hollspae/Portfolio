@@ -2,6 +2,7 @@
 session_start();
 include "../connect.php";
 
+
 if (empty($_SESSION["admin"])) {
     $_SESSION["admin"] = "";
     header('Location: ../index/index.php');
@@ -43,9 +44,23 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <a href="../author/author.php">AUTHOR</a>
         </li>
     </div>
+
+
+    <span class="Error">
+        <? if (!empty($_SESSION['error__year'])) {
+            echo $_SESSION['error__year'];
+        } ?>
+    </span>
+
+    <span class="Error">
+        <? if (!empty($_SESSION['error__preg_match'])) {
+            echo $_SESSION['error__preg_match'];
+        } ?>
+    </span>
+
+
     <div class="container">
         <?php foreach ($query as $row) { ?>
-
             <li>
                 <div class="container-block">
 
@@ -60,23 +75,19 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                         <button id="SubmitAdd" value="<?php echo $row['id_работы'] ?>">
                             <img src="img/add.png" alt="">
                         </button>
+
                         <form action="FormCard.php" method="post">
-                            <button type="submit" name="SubmitDelete" id="SubmitDelete"
+                            <button type="submit" name="SubmitDelete_digital" id="SubmitDelete_digital"
                                 value="<?php echo $row['id_работы'] ?>">
                                 <img src="img/del.png" alt="">
                             </button>
                         </form>
                     </div>
 
-
                 </div>
 
             </li>
-
-
         <?php } ?>
-
-
     </div>
 
 
@@ -87,28 +98,33 @@ $query = $BD->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                 <div class="addition-block__close">
                     <img src="img/close.png" alt="" id="btn-close">
                 </div>
-   
-                    <p class="addition-block__title">New Image</p>
+
+                <p class="addition-block__title">New Image</p>
                 <hr>
 
                 <div class="addition-block__content">
-        
+
                     <ul>
                         <li> <a href="https://imgur.com/">Imgur</a></li>
                         <li> <a href="https://postimages.org/">Postimages</a></li>
                         <li> <a href="https://radikal.cloud/">Radikal</a> </li>
                     </ul>
-                    <input type="text" name="Photo__link" id="Photo__link" placeholder="link">
-                    <input type="text" name="Photo__year" id="Photo__year" placeholder="year">
+
+                    <input type="url" name="Photo__link" id="Photo__link" placeholder="link" minlength="8"
+                        maxlength="80" required>
+
+                    <input type="text" name="Photo__year" id="Photo__year" placeholder="year" minlength="4"
+                        maxlength="4" required>
+
                 </div>
 
-                <button type="submit" class="btn-add" id="btn-add" name="SubmitAdd">Add</button>
+                <button type="submit" class="btn-add" id="btn-add" name="SubmitAdd__digital">Add</button>
 
             </div>
         </form>
     </aside>
 
-    <script src="js/script.js?v=1"></script>
+    <script src="js/script.js?"></script>
 </body>
 
 </html>
