@@ -1,0 +1,16 @@
+@import url("Public.css");
+
+body {
+  background: radial-gradient(
+    50% 70%,
+    var(--colorCircle),
+    var(--colorBackground)
+  );
+
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}

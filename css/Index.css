@@ -1,0 +1,70 @@
+@import url("Public.css");
+
+body {
+  background: radial-gradient(
+    60% 120% at top,
+    var(--colorCircle),
+    var(--colorBackground)
+  );
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5em 3em;
+}
+
+content {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.contentTitile {
+  font-size: 3.3rem;
+  font-weight: 500;
+}
+nav {
+  display: inline-flex;
+  width: 80%;
+  justify-content: space-around;
+
+  padding-top: 5em;
+}
+.card {
+  display: flex;
+  width: 20vw;
+  height: 30vw;
+
+  border: 1px solid var(--colorWhite);
+  border-radius: 0.5rem;
+
+  justify-content: center;
+  align-items: center;
+}
+#cardDidgital {
+  background: radial-gradient(
+    ellipse 110% 50% at right,
+    var(--colorCircle),
+    #101024
+  );
+}
+#cardAuthor {
+  background: radial-gradient(90% 50%, var(--colorCircle), #101024);
+}
+#cardTradition {
+  background: radial-gradient(
+    ellipse 110% 50% at left,
+    var(--colorCircle),
+    #101024
+  );
+}
+.card > a {
+  font-size: 2.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-style: italic;
+}
